@@ -2,6 +2,8 @@
 
 A [Decky Loader](https://decky.xyz/) plugin for the Steam Deck.
 
+![AC Full Power decky options](screenshots/screen.jpg "Plugin options")
+
 You set per-game TDP and GPU/CPU clock limits in the Steam Deck performance settings to save battery.
 **AC Full Power** lifts those limits automatically while the Deck is charging (charger or powered dock), and puts your
 exact values back when you unplug it.
