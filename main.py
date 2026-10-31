@@ -67,21 +67,6 @@ def on_charger():
     return False
 
 
-def docked():
-    """True if an external display (dock / HDMI / DP) is connected."""
-    for st in glob.glob("/sys/class/drm/card*-*/status"):
-        name = os.path.basename(os.path.dirname(st))
-        if "eDP" in name or "DSI" in name or "LVDS" in name:
-            continue
-        if read(st) == "connected":
-            return True
-    return False
-
-
-def external_power():
-    return on_charger() or docked()
-
-
 # --------------------------------------------------------------------------
 # tunables: each knows how to read its current state, what "unlimited" looks
 # like, and how to write a state back
@@ -185,7 +170,6 @@ class Plugin:
     saved = {}      # tunable id -> user's state, only while limits are lifted
     enabled = True
     plugged = False
-    is_docked = False
     task = None
 
     # ---- persistence -----------------------------------------------------
@@ -247,8 +231,7 @@ class Plugin:
         self._save_state()
 
     def _tick(self):
-        self.is_docked = docked()
-        self.plugged = on_charger() or self.is_docked
+        self.plugged = on_charger()
         if self.enabled and self.plugged:
             self._lift_limits()
         elif self.saved:
@@ -284,7 +267,6 @@ class Plugin:
         return {
             "enabled": self.enabled,
             "plugged": self.plugged,
-            "docked": self.is_docked,
             "lifted": list(self.saved.keys()),
             "detected": [t.id for t in self.tunables if t.current() is not None],
         }

@@ -3,7 +3,7 @@
 A [Decky Loader](https://decky.xyz/) plugin for the Steam Deck.
 
 You set per-game TDP and GPU/CPU clock limits in the Steam Deck performance settings to save battery.
-**AC Full Power** lifts those limits automatically while the Deck is on a charger or docked, and puts your
+**AC Full Power** lifts those limits automatically while the Deck is charging (charger or powered dock), and puts your
 exact values back when you unplug it.
 
 **Nothing to configure.** The plugin does not ask for wattages or frequencies. It reads whatever limits
@@ -13,8 +13,8 @@ SteamOS has currently applied to the hardware and remembers them.
 
 Every 2 seconds the plugin checks the power source:
 
-- **Charger or dock detected** (any external power supply in `/sys/class/power_supply` is online, or an
-  external display is connected in `/sys/class/drm`):
+- **Charging detected** (any external power supply in `/sys/class/power_supply` is online; this includes a
+  dock that is supplying power; a dock that only provides a display connection does not count):
   for every limit that is currently active, it saves the current value and sets the hardware maximum.
   - TDP: `power1_cap` / `power2_cap` → `*_cap_max` (hwmon)
   - GPU: manual clock range (`pp_od_clk_voltage`) → full `OD_RANGE`, performance level → `auto`
@@ -25,7 +25,7 @@ If Steam re-applies a game profile while you are on the charger (for example aft
 plugin notices and lifts that limit as well. Saved values are also stored on disk (tied to the current boot),
 so nothing is lost if Decky restarts while a limit is lifted.
 
-The quick access menu panel has an on/off switch and shows power source, dock state and which limits are
+The quick access menu panel has an on/off switch and shows the power source and which limits are
 currently lifted.
 
 ## Known limitations
@@ -33,8 +33,8 @@ currently lifted.
 - The limits are lifted on the hardware level. The switches and sliders in Steam's Performance tab are **not**
   changed, so they keep showing your profile even while the limits are lifted.
 - Right after plugging in, Steam may briefly re-apply the profile before the plugin lifts it again.
-- Dock detection treats any connected external display as "docked". It has only been tested with a
-  charger so far; sysfs names can differ between docks.
+- Only charging counts. A connected external display alone does not lift the limits. Tested with a charger;
+  a powered dock should behave the same way but has not been tested.
 - Tested on SteamOS only; the `sysfs` paths can vary between Deck models and SteamOS versions. The panel
   shows under "Detected controls" which of TDP / GPU / CPU were found.
 

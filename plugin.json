@@ -1,10 +1,16 @@
 {
   "name": "AC Full Power",
   "author": "braunglasrakete",
-  "flags": ["root"],
+  "flags": [
+    "root"
+  ],
   "api_version": 1,
   "publish": {
-    "tags": ["power", "tdp", "charger", "dock"],
-    "description": "Lifts TDP, GPU and CPU clock limits while a charger or dock is connected and restores your per-game values on unplug."
+    "tags": [
+      "power",
+      "tdp",
+      "charger"
+    ],
+    "description": "Lifts TDP, GPU and CPU clock limits while charging and restores your per-game values on unplug."
   }
 }

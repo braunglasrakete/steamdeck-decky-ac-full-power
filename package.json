@@ -1,6 +1,6 @@
 {
   "name": "steamdeck-decky-ac-full-power",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lift Steam Deck power limits while on AC, restore them on battery",
   "type": "module",
   "scripts": {

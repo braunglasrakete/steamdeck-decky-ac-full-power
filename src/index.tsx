@@ -6,7 +6,6 @@ import { FaBolt } from "react-icons/fa";
 type Status = {
   enabled: boolean;
   plugged: boolean;
-  docked: boolean;
   lifted: string[];
   detected: string[];
 };
@@ -44,7 +43,7 @@ function Content() {
     <PanelSection title="AC Full Power">
       <PanelSectionRow>
         <ToggleField
-          label="Lift limits on charger / dock"
+          label="Lift limits while charging"
           description="Restores your per-game limits when unplugged"
           checked={status.enabled}
           onChange={async (v: boolean) => {
@@ -54,10 +53,7 @@ function Content() {
         />
       </PanelSectionRow>
       <PanelSectionRow>
-        <Field label="Power source">{status.plugged ? "Charger / dock" : "Battery"}</Field>
-      </PanelSectionRow>
-      <PanelSectionRow>
-        <Field label="Docked">{status.docked ? "Yes" : "No"}</Field>
+        <Field label="Power source">{status.plugged ? "Charging" : "Battery"}</Field>
       </PanelSectionRow>
       <PanelSectionRow>
         <Field label="Currently lifted">{names(status.lifted)}</Field>
