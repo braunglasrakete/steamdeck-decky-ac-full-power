@@ -35,8 +35,7 @@ currently lifted.
 - The limits are lifted on the hardware level. The switches and sliders in Steam's Performance tab are **not**
   changed, so they keep showing your profile even while the limits are lifted.
 - Right after plugging in, Steam may briefly re-apply the profile before the plugin lifts it again.
-- Only charging counts. A connected external display alone does not lift the limits. Tested with a charger;
-  a powered dock should behave the same way but has not been tested.
+- Only charging counts. A connected external display alone does not lift the limits. Tested with a charger and a powered dock.
 - Tested on SteamOS only; the `sysfs` paths can vary between Deck models and SteamOS versions. The panel
   shows under "Detected controls" which of TDP / GPU / CPU were found.
 
