@@ -2,7 +2,7 @@
 
 A [Decky Loader](https://decky.xyz/) plugin for the Steam Deck.
 
-![AC Full Power decky options](screenshot/screen.jpg "Plugin options")
+![AC Full Power decky panel](screenshot/screen.jpg "Plugin panel")
 
 You set per-game TDP and GPU/CPU clock limits in the Steam Deck performance settings to save battery.
 **AC Full Power** lifts those limits automatically while the Deck is charging (charger or powered dock), and puts your
@@ -34,9 +34,9 @@ currently lifted.
 
 - The limits are lifted on the hardware level. The switches and sliders in Steam's Performance tab are **not**
   changed, so they keep showing your profile even while the limits are lifted.
-- Right after plugging in, Steam may briefly re-apply the profile before the plugin lifts it again.
+- Right after plugging in, Steam may briefly re-apply the profile before the plugin lifts it again. It takes four to five seconds to persisently lift the limits.
 - Only charging counts. A connected external display alone does not lift the limits. Tested with a charger and a powered dock.
-- Tested on SteamOS only; the `sysfs` paths can vary between Deck models and SteamOS versions. The panel
+- Tested on OLED model only; the `sysfs` paths can vary between Deck models and SteamOS versions. The panel
   shows under "Detected controls" which of TDP / GPU / CPU were found.
 
 ## Install
