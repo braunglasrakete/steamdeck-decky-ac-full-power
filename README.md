@@ -42,7 +42,7 @@ currently lifted.
 
 ### From a ZIP, pre-built
 
-Download the .zip from https://github.com/braunglasrakete/steamdeck-decky-ac-full-power/releases/latest//download/ac-full-power.zip and install through developer options in Decky.
+Download the .zip from https://github.com/braunglasrakete/steamdeck-decky-ac-full-power/releases/latest/download/ac-full-power.zip and install through developer options in Decky.
 
 ### From a ZIP, self-built
 
