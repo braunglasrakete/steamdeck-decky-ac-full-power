@@ -40,7 +40,11 @@ currently lifted.
 
 ## Install
 
-### From a ZIP
+### From a ZIP, pre-built
+
+Download the .zip from https://github.com/braunglasrakete/steamdeck-decky-ac-full-power/releases/latest//download/ac-full-power.zip and install through developer options in Decky.
+
+### From a ZIP, self-built
 
 1. Build the plugin (see below) and zip the folder `ac-full-power/` containing `main.py`, `plugin.json`,
    `package.json` and `dist/index.js`.
