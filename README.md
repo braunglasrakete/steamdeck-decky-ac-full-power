@@ -8,7 +8,7 @@ You set per-game TDP and GPU/CPU clock limits in the Steam Deck performance sett
 **AC Full Power** lifts those limits automatically while the Deck is charging (charger or powered dock), and puts your
 exact values back when you unplug it.
 
-This can be combined with [Mako's](https://github.com/eugeniosegala/MAKO) settings for activating or deactivating frame generation based on charging status to achieve one specific behavior: when playing handheld without AC, you save battery by limiting TDP and frequencies, and depending on the title you might combine it with frame generation to reach the frame rates you want. When plugging it in, the limits could be lifted for more performance, which would allow you to also deactivate frame generation for a better visual experience. This plugin bridges that gap by doing it for you.
+This can be combined with [Mako's](https://github.com/eugeniosegala/MAKO) settings for activating or deactivating frame generation based on charging status to achieve one specific behavior: when playing handheld without AC, you save battery by limiting TDP and frequencies, and depending on the title you might combine it with frame generation to reach the frame rates you want. When plugging it in, the limits could be lifted for more performance, which would allow you to also deactivate frame generation for a better visual experience. This plugin bridges that gap by lifting the limits for you.
 
 **Nothing to configure.** The plugin does not ask for wattages or frequencies. It reads whatever limits
 SteamOS has currently applied to the hardware and remembers them.
